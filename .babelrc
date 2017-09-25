@@ -1,0 +1,8 @@
+{
+    "presets": [["babel-preset-env"], "react"],
+    "plugins": [
+      "transform-object-rest-spread",
+      ["lodash", { "id": ["lodash", "semantic-ui-react"] }]
+    ]
+  }
+  

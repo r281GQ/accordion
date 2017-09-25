@@ -5,13 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     list.addEventListener('click', function (event) {
         if (event.target.classList[0] === 'button') {
-            if (event.target.parentNode.nextElementSibling.classList.contains('container__item__text__wrapper__inactive')) {
-                event.target.parentNode.classList.remove('container__item__inactive');
-                event.target.parentNode.nextElementSibling.classList.remove('container__item__text__wrapper__inactive');
+            var textElement = event.target.parentNode.nextElementSibling;
+            var headerElement = event.target.parentNode;
+            
+            if (textElement.classList.contains('container__item__text__wrapper__inactive')) {
+                headerElement.classList.remove('container__item__inactive');
+                textElement.classList.remove('container__item__text__wrapper__inactive');
                 event.target.innerHTML = '˄';
             } else {
-                event.target.parentNode.classList.add('container__item__inactive');
-                event.target.parentNode.nextElementSibling.classList.add('container__item__text__wrapper__inactive');
+                headerElement.classList.add('container__item__inactive');
+                textElement.classList.add('container__item__text__wrapper__inactive');
                 event.target.innerHTML = 'ˇ';
             }
         }
